@@ -2,117 +2,133 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="胡氏藝術以策展、藝術策略與專案執行，連結國際視野與在地資源。">
-  <title>關於我們｜胡氏藝術</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="胡氏藝術連結文化願景、藝術專業與執行資源，讓藝術成為空間與社會持續產生影響的力量。">
+  <title>關於胡氏｜Hu's Art Company</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="nav-unified.css">
-  <link rel="stylesheet" href="about-v2.css">
+  <link rel="stylesheet" href="nav-unified.css?v=7">
+  <link rel="stylesheet" href="art-direction.css">
+  <link rel="stylesheet" href="about-redesign.css">
   <link rel="stylesheet" href="page-transition.css">
   <script src="page-transition.js"></script>
 </head>
-<body class="about-v2" data-page="about">
+<body class="about-page">
   <div class="page-progress" aria-hidden="true"><span></span></div>
+
   <header class="site-header" data-header>
     <a class="brand brand-mark" href="home.html" aria-label="前往胡氏藝術首頁"><img src="assets/husart-logo.svg" alt=""></a>
     <nav class="desktop-nav" aria-label="主要導覽">
-      <a href="home.html">首頁</a><a class="active" href="index.html">關於我們</a><a href="projects.html">執行專案</a>
-      <a href="artists.html">合作藝術家</a><a href="news.html">最新消息</a><a href="publications.html">出版</a>
+      <a href="home.html">首頁</a><a class="active" aria-current="page" href="#about">關於我們</a><a href="projects.html">執行專案</a><a href="artists.html">合作藝術家</a><a href="news.html">最新消息</a><a href="publications.html">出版</a>
     </nav>
     <div class="header-lang language-switch" aria-label="目前語言：中文"><span class="is-active" aria-current="true">CN</span><span>EN</span></div>
     <button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false"><span></span><span></span></button>
   </header>
+
   <div class="mobile-menu" aria-hidden="true">
-    <nav><a href="home.html">首頁</a><a href="index.html">關於我們</a><a href="projects.html">執行專案</a><a href="artists.html">合作藝術家</a><a href="news.html">最新消息</a><a href="publications.html">出版</a></nav>
-    <a href="mailto:husart@husart.net">husart@husart.net</a>
+    <nav>
+      <a href="home.html"><small>01</small>首頁</a><a href="#about"><small>02</small>關於我們</a><a href="projects.html"><small>03</small>執行專案</a><a href="artists.html"><small>04</small>合作藝術家</a><a href="news.html"><small>05</small>最新消息</a><a href="publications.html"><small>06</small>出版</a><a href="#contact"><small>07</small>聯絡</a>
+    </nav>
+    <div><p>TAIPEI · TAIWAN</p><a href="mailto:husart@husart.net">husart@husart.net</a></div>
   </div>
 
-  <main id="top">
-    <section class="about-hero" data-value-story aria-label="胡氏藝術實績">
-      <div class="about-hero-brand reveal"><img src="assets/about/footer-brand.png" alt="HU'S ART COMPANY 胡氏藝術"></div>
-      <div class="about-hero-metrics">
-        <article class="reveal"><div><strong data-count="100">0</strong><sup>+</sup></div><p>完成專案</p></article>
-        <span aria-hidden="true"></span>
-        <article class="reveal"><div><strong data-count="80">0</strong><sup>+</sup></div><p>展覽策劃</p></article>
-        <span aria-hidden="true"></span>
-        <article class="reveal"><div><strong data-count="120">0</strong><sup>+</sup></div><p>合作藝術家</p></article>
-      </div>
-    </section>
-
-    <section class="about-leadership" aria-labelledby="leader-name">
-      <figure class="about-leader-image reveal"><img src="assets/about/ceo.png" alt="胡氏藝術創辦人暨執行長胡朝聖"></figure>
-      <div class="about-leader-copy reveal">
-        <p class="about-eyebrow">FOUNDER &amp; CEO</p><h1 id="leader-name">胡朝聖</h1>
-        <h2>藝術顧問的價值，在於把文化想像轉化成每個人都能進入的現實。</h2>
-        <p>胡氏藝術創辦人暨執行長，紐約流行設計學院藝術管理碩士。長期投入當代藝術策展、公共藝術與城市文化實踐，曾任臺北白晝之夜藝術總監、臺灣視覺藝術協會理事長，並參與多項政府與企業文化計畫。</p>
-        <a class="about-text-link" href="#leader-name">查看完整經歷<img src="assets/arrow-back.svg" alt=""></a>
-      </div>
-    </section>
-
-    <section class="about-goals" id="goals" aria-labelledby="goals-title">
-      <header class="about-section-head reveal"><h2 id="goals-title">我們協助你達成的目標</h2><p>從策略到現場，讓每一段關係成立。</p></header>
-      <div class="about-goal-grid">
-        <article class="about-goal reveal"><span>04</span><h3>藝術策略</h3><p>釐清組織、場域與受眾的目標，建立計畫的文化定位與可持續架構。</p></article>
-        <article class="about-goal reveal"><span>03</span><h3>策展與內容</h3><p>把抽象議題轉化為敘事、展覽與參與體驗，讓不同的人找到進入作品的方法。</p></article>
-        <article class="about-goal reveal"><span>01</span><h3>藝術家與跨域媒合</h3><p>連結藝術、建築、設計、科技與社群資源，讓最適合的合作關係發生。</p></article>
-        <article class="about-goal reveal"><span>02</span><h3>製作整合與長期營運</h3><p>從預算、工程、現場到維護溝通，讓藝術完整落地並持續產生價值。</p></article>
-      </div>
-      <a class="about-text-link about-centered-link" href="projects.html">查看成功案例<img src="assets/arrow-back.svg" alt=""></a>
-    </section>
-
-    <section class="about-awards" id="awards" aria-labelledby="awards-title" data-awards>
-      <header class="about-section-head reveal">
-        <p class="about-awards-eyebrow">RECOGNITION</p>
-        <h2 id="awards-title">獲獎記錄</h2>
-        <p>專業不只落在成果，也經得起公共文化與藝術領域的長期檢驗。</p>
-      </header>
-      <div class="about-awards-stage reveal" data-awards-stage aria-live="polite">
-        <article class="about-award-card" data-award-year="2024"><div><time>2024</time><span>AWARD 01</span></div><section><strong>臺南市立圖書館新總館公共藝術計畫《知識之城》</strong><p>文化部第九屆公共藝術獎「環境融合獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2024"><div><time>2024</time><span>AWARD 02</span></div><section><strong>臺南市立圖書館新總館公共藝術作品《陣風》</strong><p>獲選為文化部111年公共藝術年鑑封面</p></section></article>
-        <article class="about-award-card" data-award-year="2023"><div><time>2023</time><span>AWARD 01</span></div><section><strong>胡氏藝術執行長 胡朝聖</strong><p>亞洲週刊第八屆全球傑出青年領袖</p></section></article>
-        <article class="about-award-card" data-award-year="2022"><div><time>2022</time><span>AWARD 01</span></div><section><strong>南港國家會展中心公共藝術作品《光牆》</strong><p>文化部第八屆公共藝術獎「藝術創作獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2020"><div><time>2020</time><span>AWARD 01</span></div><section><strong>桃園機場捷運公共藝術設置案「交‧感知區」</strong><p>文化部第七屆公共藝術獎「評審特別獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2018"><div><time>2018</time><span>AWARD 01</span></div><section><strong>國際先鋒設計科技體驗館「感同身受」</strong><p>第一屆河北國際工業設計週「最佳組織獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2017"><div><time>2017</time><span>AWARD 01</span></div><section><strong>「光．合作用－亞洲當代藝術同志議題展」</strong><p>亞洲藝術新聞雜誌「亞洲年度最佳展覽」</p></section></article>
-        <article class="about-award-card" data-award-year="2017"><div><time>2017</time><span>AWARD 02</span></div><section><strong>「光．合作用－亞洲當代藝術同志議題展」</strong><p>香港 CoBo 雜誌「2017年亞洲十大好展」第三名</p></section></article>
-        <article class="about-award-card" data-award-year="2017"><div><time>2017</time><span>AWARD 03</span></div><section><strong>「光．合作用－亞洲當代藝術同志議題展」</strong><p>《藝術家》雜誌「2017年度十大公辦好展」</p></section></article>
-        <article class="about-award-card" data-award-year="2010"><div><time>2010</time><span>AWARD 01</span></div><section><strong>「2010種子計畫2 藝術在山左右－地景裝置藝術展」</strong><p>第九屆臺北市都市景觀大獎「地景藝術特別獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2010"><div><time>2010</time><span>AWARD 02</span></div><section><strong>「明日博物館－風帶來光 新宮晉動力／地景藝術展」</strong><p>第九屆臺北市都市景觀大獎「地景藝術特別獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2008"><div><time>2008</time><span>AWARD 01</span></div><section><strong>明日博物館</strong><p>第九屆文化部文馨獎「創意大獎」</p></section></article>
-        <article class="about-award-card" data-award-year="2005"><div><time>2005</time><span>AWARD 01</span></div><section><strong>「快感—奧地利電子藝術節二十五年大展」</strong><p>「十大公辦好展覽」年度好展</p></section></article>
-        <article class="about-award-card" data-award-year="2003"><div><time>2003</time><span>AWARD 01</span></div><section><strong>南港軟體工業園區公共藝術案「實擬虛境」</strong><p>第一屆公共藝術大獎首獎</p></section></article>
-      </div>
-      <div class="about-awards-nav reveal">
-        <button class="about-awards-arrow" type="button" data-awards-prev aria-label="前一個獲獎年份">←</button>
-        <div class="about-awards-years" role="tablist" aria-label="選擇獲獎年份">
-          <button type="button" role="tab" data-award-tab="2024" aria-selected="true">2024</button><button type="button" role="tab" data-award-tab="2023" aria-selected="false">2023</button><button type="button" role="tab" data-award-tab="2022" aria-selected="false">2022</button><button type="button" role="tab" data-award-tab="2020" aria-selected="false">2020</button><button type="button" role="tab" data-award-tab="2018" aria-selected="false">2018</button><button type="button" role="tab" data-award-tab="2017" aria-selected="false">2017</button><button type="button" role="tab" data-award-tab="2010" aria-selected="false">2010</button><button type="button" role="tab" data-award-tab="2008" aria-selected="false">2008</button><button type="button" role="tab" data-award-tab="2005" aria-selected="false">2005</button><button type="button" role="tab" data-award-tab="2003" aria-selected="false">2003</button>
+  <main id="about">
+    <section class="about-hero" data-value-story aria-labelledby="about-title">
+      <div class="about-hero-copy">
+        <p class="scene-label"><span>01</span> ABOUT HU'S ART · 關於胡氏</p>
+        <h1 id="about-title">讓藝術不只被看見，<br><em>而是被實現。</em></h1>
+        <div class="about-hero-intro">
+          <p>胡氏藝術是一個以策展思考為核心的藝術顧問團隊。我們在文化想像與現實條件之間，建立一條可以共同前進的路。</p>
+          <a href="projects.html">觀看代表專案 <span>↗</span></a>
         </div>
-        <button class="about-awards-arrow" type="button" data-awards-next aria-label="後一個獲獎年份">→</button>
+      </div>
+      <figure class="about-hero-image">
+        <img src="assets/projects/project-02.png" alt="東吳實境藝術節戶外藝術作品與觀眾">
+        <figcaption><span>FIELD NOTE 01</span><b>ART / SPACE / PUBLIC</b></figcaption>
+      </figure>
+      <p class="about-hero-mark" aria-hidden="true">H—A</p>
+    </section>
+
+    <section class="about-position about-section">
+      <div class="about-section-index reveal"><span>02</span><p>OUR POSITION<br>我們的位置</p></div>
+      <div class="about-position-copy reveal">
+        <h2>我們不只為空間選擇作品，<br>而是從目標、場域與人出發，<br>建立藝術發生的條件。</h2>
+        <div class="about-position-notes">
+          <p>從公共藝術、城市美學到品牌與文化跨界計畫，胡氏藝術連結創作者、策展人、建築團隊、公共機構與企業資源。</p>
+          <p>每一個計畫都從研究開始，經過協作、製作與溝通，在限制中找到最適切的實現方式。</p>
+        </div>
       </div>
     </section>
 
-    <section class="about-partners" id="partners" aria-labelledby="partners-title">
-      <h2 id="partners-title" class="reveal">與我們建立長期信任的合作夥伴</h2>
-      <div class="about-partner-grid reveal">
-        <img src="assets/about/partners/partner-04.png" alt="大陸建設"><img src="assets/about/partners/partner-12.png" alt="信義房屋"><img src="assets/about/partners/partner-03.png" alt="忠泰建設"><img src="assets/about/partners/partner-02.png" alt="桃園捷運"><img src="assets/about/partners/partner-09.png" alt="台北當代藝術館">
-        <img src="assets/about/partners/partner-05.png" alt="臺北市政府"><img src="assets/about/partners/partner-06.png" alt="臺中市政府"><img src="assets/about/partners/partner-07.png" alt="臺南市政府"><img src="assets/about/partners/partner-08.png" alt="桃園市政府"><img src="assets/about/partners/partner-10.png" alt="忠泰美術館">
+    <section class="about-method about-section" aria-labelledby="method-heading">
+      <header class="about-method-head reveal">
+        <div class="about-section-index"><span>03</span><p>HOW WE WORK<br>工作方法</p></div>
+        <h2 id="method-heading">從理解開始，<br>以實現為終點。</h2>
+      </header>
+      <div class="about-method-grid">
+        <article class="reveal"><span>01</span><small>RESEARCH</small><h3>理解</h3><p>梳理場域、受眾、議題與限制，先確認計畫真正需要回應的問題。</p></article>
+        <article class="reveal"><span>02</span><small>CONNECT</small><h3>連結</h3><p>媒合藝術家與跨領域專業，讓不同知識與立場在共同目標下相遇。</p></article>
+        <article class="reveal"><span>03</span><small>DELIVER</small><h3>實現</h3><p>整合製作、工程、溝通與現場執行，將策展概念轉化為可長期發展的成果。</p></article>
       </div>
     </section>
 
-    <section class="about-cta" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">有一個需要藝術參與的空間、品牌或公共計畫？</h2>
-      <p>告訴我們目前的目標、場域與專案階段，我們將協助你釐清適合的藝術策略與執行方式。</p>
-      <div class="about-cta-actions"><a href="mailto:husart@husart.net">與我們聯絡<span aria-hidden="true">→</span></a><a href="projects.html">查看專案<span aria-hidden="true">→</span></a></div>
+    <section class="about-work about-section" aria-labelledby="work-heading">
+      <header class="about-work-head reveal">
+        <div class="about-section-index"><span>04</span><p>SELECTED PRACTICE<br>代表實踐</p></div>
+        <h2 id="work-heading">不同尺度，<br>同一種工作態度。</h2>
+        <a href="projects.html">查看全部專案 <span>↗</span></a>
+      </header>
+      <div class="about-work-grid">
+        <a class="about-work-card about-work-card-large reveal" href="project.html?id=2"><figure><img src="assets/projects/project-02.png" alt="方寸之間—東吳實境藝術節第五季"></figure><div><span>01 / PUBLIC SPACE</span><h3>方寸之間—東吳實境藝術節第五季</h3><time>2025</time></div></a>
+        <a class="about-work-card reveal" href="project.html?id=1"><figure><img src="assets/projects/project-01.png" alt="潛行展覽主視覺"></figure><div><span>02 / CURATION</span><h3>潛行</h3><time>2025</time></div></a>
+        <a class="about-work-card reveal" href="project.html?id=5"><figure><img src="assets/projects/project-04.png" alt="花蓮國際石雕藝術季主視覺"></figure><div><span>03 / ART FESTIVAL</span><h3>花蓮國際石雕藝術季</h3><time>2023</time></div></a>
+      </div>
+    </section>
+
+    <section class="about-capabilities about-section" aria-labelledby="capabilities-heading">
+      <header class="about-capabilities-head reveal"><div class="about-section-index"><span>05</span><p>CAPABILITIES<br>核心能力</p></div><h2 id="capabilities-heading">一個計畫所需要的，<br>不只是一個好概念。</h2></header>
+      <div class="about-capability-list">
+        <article class="reveal"><span>01</span><h3>藝術策展與策略</h3><small>CURATION &amp; STRATEGY</small><p>建立策展概念、藝術策略與清楚的文化定位。</p></article>
+        <article class="reveal"><span>02</span><h3>藝術家媒合與跨界整合</h3><small>ARTIST &amp; CROSS-SECTOR</small><p>串聯藝術、建築、設計與品牌資源。</p></article>
+        <article class="reveal"><span>03</span><h3>公共藝術專案管理</h3><small>PUBLIC ART MANAGEMENT</small><p>整合製作、工程、行政與現場執行。</p></article>
+        <article class="reveal"><span>04</span><h3>藝術教育與內容延伸</h3><small>EDUCATION &amp; CONTENT</small><p>透過導覽、講座、影像與出版延伸影響。</p></article>
+      </div>
+    </section>
+
+    <section class="about-proof about-section" aria-label="胡氏藝術實績">
+      <div class="about-section-index reveal"><span>06</span><p>PROVEN IN PRACTICE<br>長期實踐</p></div>
+      <div class="about-proof-grid">
+        <article class="reveal"><strong data-count="20">0</strong><sup>+</sup><span>YEARS</span><p>藝術顧問經驗</p></article><article class="reveal"><strong data-count="100">0</strong><sup>+</sup><span>PROJECTS</span><p>完成計畫</p></article><article class="reveal"><strong data-count="120">0</strong><sup>+</sup><span>ARTISTS</span><p>藝術家合作網絡</p></article><article class="reveal"><strong data-count="80">0</strong><sup>+</sup><span>PARTNERS</span><p>機構與品牌夥伴</p></article>
+      </div>
+    </section>
+
+    <section class="about-leadership about-section">
+      <div class="about-leader-mark reveal" aria-hidden="true"><span>HC</span><small>FOUNDER / CEO</small></div>
+      <div class="about-leader-copy reveal">
+        <div class="about-section-index"><span>07</span><p>LEADERSHIP<br>執行長</p></div>
+        <blockquote>藝術顧問的工作，是在文化想像與現實條件之間，找到一條能夠實現的路。</blockquote>
+        <div class="about-leader-name"><h2>胡朝聖</h2><p>胡氏藝術創辦人暨執行長</p></div>
+        <p>長期投入藝術顧問、公共藝術與文化計畫，帶領團隊整合藝術家、建築、公共機構與企業資源。</p>
+      </div>
+    </section>
+
+    <section class="about-history about-section" aria-labelledby="history-heading">
+      <header class="about-history-head reveal"><div class="about-section-index"><span>08</span><p>OUR JOURNEY<br>重要記事</p></div><h2 id="history-heading">二十年間，持續拓展<br>藝術發生的可能。</h2></header>
+      <ol class="about-history-list">
+        <li class="reveal"><time>2005</time><h3>胡氏藝術成立</h3><p>從藝術專業出發，連結藝術家、公共空間與組織需求。</p></li><li class="reveal"><time>2012</time><h3>走入公共生活</h3><p>投入公共藝術與文化空間計畫。</p></li><li class="reveal"><time>2018</time><h3>拓展跨域合作</h3><p>深化建築、設計與品牌協作。</p></li><li class="reveal"><time>2022</time><h3>擴大參與方式</h3><p>以策展與教育回應新的公共議題。</p></li><li class="reveal"><time>2025</time><h3>累積文化影響</h3><p>走向長期文化策略與合作關係。</p></li>
+      </ol>
+    </section>
+
+    <section class="about-contact" id="contact">
+      <p class="scene-label reveal"><span>09</span> START A CONVERSATION · 與我們聯絡</p>
+      <h2 class="reveal">讓下一個藝術計畫，<br>從一次對話開始。</h2>
+      <div class="about-contact-bottom reveal"><p>告訴我們你的目標、場域與計畫階段，<br>我們會一起找出適合的藝術策略。</p><a href="mailto:husart@husart.net">開始討論計畫 <span>↗</span></a></div>
     </section>
   </main>
 
-  <footer class="about-footer">
-    <div class="about-footer-contact"><img src="assets/about/footer-brand.png" alt="Hu's Art 胡氏藝術"><p>台北市105敦化南路一段21號3樓之2<br><a href="mailto:husart@husart.net">husart@husart.net</a><br><a href="tel:+886225785467">+886-2-2578-5467</a></p></div>
-    <div class="about-footer-meta"><div><a href="#" aria-label="Instagram"><img src="assets/instagram-outer.svg" alt=""></a><a href="#" aria-label="Facebook"><img src="assets/facebook.svg" alt=""></a><a href="#" aria-label="YouTube"><img src="assets/youtube.svg" alt=""></a></div><p>Copyright © 2026 All rights reserved.</p></div>
-  </footer>
+  <footer><div class="brand">HU'S <em>ART</em></div><p>ART CONSULTING · CURATION · PUBLIC ART</p><div><a href="mailto:husart@husart.net">husart@husart.net</a><span>+886 2 2578 5467</span></div><small>© 2026 HU'S ART COMPANY</small></footer>
   <script src="script.js"></script>
 </body>
 </html>

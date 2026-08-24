@@ -1,7 +1,7 @@
 const active=document.body.dataset.page||'';
-if(!document.querySelector('link[href="nav-unified.css"]')){
+if(!document.querySelector('link[href^="nav-unified.css"]')){
   const unifiedNav=document.createElement('link');
-  unifiedNav.rel='stylesheet';unifiedNav.href='nav-unified.css';
+  unifiedNav.rel='stylesheet';unifiedNav.href='nav-unified.css?v=7';
   const artDirection=document.querySelector('link[href="art-direction.css"]');
   artDirection?artDirection.before(unifiedNav):document.head.append(unifiedNav);
 }
