@@ -1,0 +1,212 @@
+:root{
+  --wine:#862633;
+  --deep-wine:#6b141a;
+  --muted:#636569;
+  --line:#d9d9d9;
+  --project-width:1200px;
+  --project-gutter:clamp(24px,8.333vw,120px);
+  --sans:"Noto Sans TC","PingFang TC",sans-serif;
+  --latin:"Inter",sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#000;font-family:var(--sans);font-size:16px}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+
+.project-detail-page .make-header{
+  height:96px;
+  background:#fff;
+  border-bottom:0;
+  color:#000;
+  backdrop-filter:none;
+}
+.project-detail-page .make-nav a{color:#636569}
+.project-detail-page .make-nav a.active{color:#000}
+.project-detail-page .make-nav a[data-nav="projects"]::after{display:none}
+.project-detail-page .lang{color:#b1b2b4}
+.project-detail-page .lang b{color:#000}
+
+.project-heading{
+  height:312px;
+  padding:138px var(--project-gutter) 0;
+  background:#fff;
+}
+
+.project-title{
+  width:min(var(--project-width),100%);
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.project-title h1{
+  margin:0;
+  font-size:40px;
+  font-weight:600;
+  line-height:52px;
+  text-decoration:none;
+  border-bottom:0;
+}
+
+.project-meta{
+  margin:0;
+  padding-top:0;
+  border-top:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:14px;
+  line-height:20px;
+}
+
+.project-meta>div{display:flex;gap:8px}
+.project-meta dt{width:64px;color:#96989c}
+.project-meta dd{margin:0;color:#000}
+
+.project-hero{
+  width:100%;
+  height:min(61.111vw,880px);
+  min-height:520px;
+  margin:0;
+  overflow:hidden;
+  background:#031823;
+}
+
+.project-hero img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.detail-content{
+  width:min(var(--project-width),calc(100% - 48px));
+  margin:0 auto;
+  padding:76px 0 80px;
+}
+
+.detail-content h2{
+  margin:0 0 8px;
+  font-size:16px;
+  font-weight:600;
+  line-height:24px;
+}
+
+.project-info{margin-bottom:40px}
+.project-info dl{margin:0;display:flex;flex-direction:column;gap:8px}
+.project-info dl>div{display:flex;align-items:center;font-size:16px;line-height:32px}
+.project-info dt{color:var(--muted);font-weight:400;white-space:nowrap}
+.project-info dd{margin:0}
+
+.participant-list{display:flex;align-items:center;gap:12px}
+.participant-list button{border:0;background:none;padding:0;font-size:16px;line-height:24px;text-decoration:underline;text-underline-position:from-font;cursor:pointer}
+.participant-list i{width:1px;height:8px;background:#000}
+
+.project-intro{margin-bottom:48px}
+.intro-copy p{margin:0;font-size:16px;line-height:32px}
+
+.project-record{margin-bottom:0}
+.record-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.record-grid button{display:block;aspect-ratio:392/260;border:0;padding:0;background:#eee;overflow:hidden;cursor:zoom-in}
+.record-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.25,1,.5,1)}
+.record-grid button:hover img{transform:scale(1.025)}
+
+.project-actions{margin-top:80px;display:flex;justify-content:flex-end}
+.all-projects{height:40px;display:flex;align-items:center;gap:10px;color:#fff;font-size:14px;line-height:20px}
+.all-projects>span{height:40px;display:flex;align-items:center;justify-content:center;background:var(--deep-wine)}
+.all-projects>span:last-child{padding:0 12px}
+.all-projects-icon{width:40px;padding:12px}
+.all-projects-icon img{display:block;width:16px;height:16px}
+.all-projects:hover .all-projects-icon img{transform:translateX(-2px)}
+
+.project-footer{
+  min-height:218px;
+  padding:24px max(24px,calc((100vw - 1280px)/2));
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  background:var(--wine);
+  color:#fff;
+}
+
+.project-footer-contact{display:flex;flex-direction:column;gap:4px}
+.footer-brand{height:47px;margin:0;display:flex;flex-direction:column;justify-content:flex-end;line-height:1}
+.footer-brand small{font:400 8px/11px var(--latin);letter-spacing:.08em}
+.footer-brand strong{font-size:17px;font-weight:500;letter-spacing:.18em}
+.project-footer address{font-style:normal;font-size:14px;line-height:28px}
+.footer-end{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.footer-end nav{display:flex;gap:16px;align-items:center}
+.footer-end p{margin:0;font-size:14px;line-height:20px}
+.social-icon{position:relative;width:16px;height:16px;display:block}
+.social-icon>img{position:absolute;inset:0;width:16px;height:16px}
+.social-icon.instagram>img:nth-child(2){inset:3.89px;width:8.22px;height:8.22px}
+.social-icon.instagram>img:nth-child(3){left:11.12px;top:2.77px;width:1.92px;height:1.92px}
+.social-icon[aria-label="YouTube"]>img{top:2.37px;height:11.25px}
+
+.artist-overlay{position:fixed;z-index:70;inset:0;background:rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:.45s}
+.artist-overlay.open{opacity:1;visibility:visible}
+.artist-drawer{position:fixed;z-index:80;top:0;right:0;width:min(754px,52.36vw);height:100vh;background:#fff;transform:translateX(100%);transition:transform .65s cubic-bezier(.77,0,.175,1);overflow:auto;box-shadow:-4px 0 10px rgba(0,0,0,.15)}
+.artist-drawer.open{transform:none}
+.artist-drawer-inner{padding:32px 40px 84px}
+.drawer-close{position:static;border:0;background:none;padding:0;margin:0 0 40px;display:flex;align-items:center;gap:10px;height:20px;font:400 14px/20px var(--sans);cursor:pointer}
+.drawer-close svg{width:16px;height:16px}
+.detail-drawer-bio{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;margin-bottom:40px}
+.detail-drawer-bio>div{flex:0 0 219px}
+.detail-drawer-bio h2{font-size:24px;font-weight:600;line-height:32px;margin:0 0 28px}
+.detail-drawer-bio p{margin:0;white-space:pre-line;font-size:16px;line-height:24px}
+.detail-drawer-bio img{width:195px;height:196px;object-fit:cover;flex:0 0 auto}
+.detail-drawer-projects{padding-top:32px}
+.detail-drawer-projects h3{font-size:12px;font-weight:600;line-height:16px;margin:0 0 16px}
+.detail-drawer-project-list a{min-height:64px;padding:20px 16px 20px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:16px;line-height:24px;transition:background .25s,color .25s,padding .25s}
+.detail-drawer-project-list a span:last-child{font:400 20px/1 var(--latin);opacity:0;transform:translateX(-8px);transition:.25s}
+.detail-drawer-project-list a:hover,.detail-drawer-project-list a:focus-visible{padding-left:32px;background:var(--deep-wine);color:#fff;outline:0}
+.detail-drawer-project-list a:hover span:last-child,.detail-drawer-project-list a:focus-visible span:last-child{opacity:1;transform:none}
+
+.lightbox{position:fixed;z-index:100;inset:0;padding:5vw;background:rgba(0,0,0,.92);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.3s}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.lightbox button{position:absolute;right:24px;top:16px;border:0;background:none;color:#fff;font-size:36px;cursor:pointer}
+
+@media(max-width:900px){
+  .project-heading{height:250px;padding-top:116px}
+  .project-title{gap:26px}
+  .project-title h1{font-size:34px;line-height:44px}
+  .project-hero{height:70vw;min-height:360px}
+  .detail-content{padding-top:56px}
+  .record-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .project-footer{padding:36px 24px;align-items:flex-start;gap:40px;flex-direction:column}
+  .footer-end{align-items:flex-start}
+  .artist-drawer{width:min(86%,620px)}
+  .artist-drawer-inner{padding:32px 24px 64px}
+}
+
+@media(max-width:560px){
+  .project-heading{height:230px;padding-top:104px}
+  .project-title{gap:20px}
+  .project-title h1{font-size:30px;line-height:40px}
+  .project-meta dd{white-space:normal}
+  .project-hero{height:72vw;min-height:280px}
+  .detail-content{width:calc(100% - 48px);padding:48px 0 64px}
+  .project-info dl>div{align-items:flex-start}
+  .participant-line{flex-direction:column}
+  .participant-list{flex-wrap:wrap}
+  .record-grid{grid-template-columns:1fr}
+  .project-actions{margin-top:40px}
+  .project-footer{min-height:260px}
+  .artist-drawer{width:100%}
+  .detail-drawer-bio{display:block}
+  .detail-drawer-bio>div{width:100%}
+  .detail-drawer-bio img{width:100%;height:auto;aspect-ratio:1;margin-top:28px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition-duration:.01ms!important}
+}

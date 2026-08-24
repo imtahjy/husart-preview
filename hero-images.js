@@ -1,0 +1,13 @@
+window.HERO_IMAGES=[
+  "assets/projects/project-01.png",
+  "assets/projects/project-02.png",
+  "assets/projects/project-03.png",
+  "assets/projects/project-04.png",
+  "assets/projects/project-05.png",
+  "assets/projects/project-06.png",
+  "assets/projects/project-07.png",
+  "assets/projects/project-08.png",
+  "assets/projects/project-09.png",
+  "assets/projects/project-10.png",
+  "assets/projects/project-11.png"
+];

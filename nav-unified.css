@@ -1,0 +1,79 @@
+/* Shared navigation geometry for every public page. */
+@media (min-width: 901px) {
+  .site-header,
+  .make-header,
+  .make-home-page .make-header,
+  .projects-page .make-header {
+    height: 96px;
+    padding: 0 40px;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 48px;
+  }
+
+  .desktop-nav,
+  .make-nav,
+  .make-home-page .make-nav {
+    gap: 40px;
+    font-size: 12px;
+    letter-spacing: .2em;
+  }
+
+  .header-lang,
+  .lang,
+  .make-home-page .lang {
+    margin-left: 0;
+  }
+}
+
+/* Figma 128:6582 — shared square language selector. */
+.site-header .language-switch,
+.make-header .language-switch,
+.make-home-page .language-switch{display:flex;align-items:center;gap:0;font:400 14px/20px Inter,sans-serif;letter-spacing:0}
+.language-switch>span{width:36px;height:36px;display:grid;place-items:center;color:#b1b2b4}
+.language-switch>span.is-active{background:#862633;color:#fff}
+.site-header.over-hero .language-switch>span:not(.is-active){color:#b1b2b4}
+
+@media (max-width: 900px) {
+  .site-header,
+  .make-header,
+  .make-home-page .make-header,
+  .projects-page .make-header {
+    height: 72px;
+    grid-template-columns: 1fr auto auto;
+    column-gap: 8px;
+  }
+
+  .site-header .language-switch,
+  .make-header .language-switch,
+  .make-home-page .language-switch {
+    display: flex;
+    margin-left: 0;
+  }
+
+  .mobile-menu,
+  .make-drawer {
+    z-index: 1000;
+  }
+
+  body.menu-open .site-header,
+  body.menu-open .make-header {
+    z-index: 1010;
+    background: transparent;
+    color: #fff;
+    border-color: transparent;
+    backdrop-filter: none;
+  }
+
+  body.menu-open .make-logo { filter: brightness(0) invert(1); }
+  body.menu-open .make-menu::before,
+  body.menu-open .make-menu::after { background: #fff; }
+  body.menu-open .language-switch>span:not(.is-active) { color: rgba(255,255,255,.62); }
+}
+
+/* Projects and artists use a clean white navigation surface. */
+.projects-page .make-header,
+body[data-page="artists"] .make-header {
+  background: #fff;
+  border-bottom: 0;
+  backdrop-filter: none;
+}

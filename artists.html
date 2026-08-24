@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>合作藝術家｜胡氏藝術</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="make.css">
+    <link rel="stylesheet" href="artists-make.css">
+    <link rel="stylesheet" href="page-transition.css">
+    <script src="page-transition.js"></script>
+</head>
+<body data-page="artists">
+  <div data-shell-header></div>
+  <main class="artists-page">
+    <div class="artists-list-wrap" data-list-wrap>
+      <h1>合作藝術家</h1>
+      <div class="artists-list" id="artists-list"></div>
+    </div>
+  </main>
+  <div data-shell-footer></div>
+
+  <aside class="artist-panel" data-panel aria-hidden="true" aria-label="藝術家資訊">
+    <div class="artist-panel-inner" id="artist-panel-content"></div>
+  </aside>
+  <button class="artist-panel-mask" data-panel-mask type="button" aria-label="關閉藝術家資訊"></button>
+
+  <script src="make-shell.js"></script>
+  <script src="artist-data.js"></script>
+  <script src="artists-make.js"></script>
+</body>
+</html>

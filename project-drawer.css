@@ -1,0 +1,10 @@
+.project-drawer-overlay{position:fixed;z-index:100;inset:0;background:rgba(0,0,0,.34);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+.project-drawer-overlay.open{opacity:1;visibility:visible}
+.project-drawer-shell{position:fixed;z-index:110;inset:0 0 0 auto;width:min(90vw,1320px);background:#fff;box-shadow:-12px 0 42px rgba(0,0,0,.16);transform:translateX(100%);transition:transform .62s cubic-bezier(.77,0,.175,1);overflow:hidden}
+.project-drawer-shell.open{transform:translateX(0)}
+.project-drawer-frame{display:block;width:100%;height:100%;border:0;background:#fff}
+.projects-page.project-drawer-open{overflow:hidden}
+.projects-page .projects-main,.projects-page .make-header{transition:transform .62s cubic-bezier(.77,0,.175,1),filter .45s}
+.projects-page.project-drawer-open .projects-main,.projects-page.project-drawer-open .make-header{transform:translateX(-2.5vw);filter:brightness(.78)}
+@media(max-width:760px){.project-drawer-shell{width:100vw}.projects-page.project-drawer-open .projects-main,.projects-page.project-drawer-open .make-header{transform:none}}
+@media(prefers-reduced-motion:reduce){.project-drawer-overlay,.project-drawer-shell,.projects-page .projects-main,.projects-page .make-header{transition-duration:.01ms!important}}

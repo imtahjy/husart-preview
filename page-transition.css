@@ -1,0 +1,66 @@
+:root{
+  --page-veil-color:#76151d;
+  --page-veil-cover:.30s;
+  --page-veil-fade:.36s;
+}
+
+.page-transition-curtain{
+  position:fixed;
+  z-index:2147483000;
+  inset:0;
+  background:var(--page-veil-color);
+  pointer-events:none;
+  transform:scaleY(0);
+  transform-origin:bottom;
+  opacity:1;
+  will-change:transform,opacity;
+}
+
+.page-transition-curtain.is-covering{
+  transform:scaleY(1);
+  pointer-events:auto;
+  transition:transform var(--page-veil-cover) cubic-bezier(.2,.9,.25,1);
+}
+
+.page-transition-curtain.is-holding{
+  transform:scaleY(1);
+  pointer-events:auto;
+}
+
+.page-transition-curtain.is-fading{
+  transform:scaleY(1);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity var(--page-veil-fade) ease;
+}
+
+.page-transition-curtain i{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:5px;
+  height:5px;
+  margin:-2.5px 0 0 -2.5px;
+  border-radius:50%;
+  background:rgba(255,255,255,.55);
+  opacity:0;
+}
+
+.page-transition-curtain.is-holding i{
+  animation:page-veil-blip 1s ease-in-out infinite;
+}
+
+@keyframes page-veil-blip{
+  0%,100%{opacity:.15;transform:scale(.7)}
+  50%{opacity:.75;transform:scale(1)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .page-transition-curtain,
+  .page-transition-curtain.is-covering,
+  .page-transition-curtain.is-holding,
+  .page-transition-curtain.is-fading{
+    transition:none!important;
+    transform:scaleY(0)!important;
+  }
+}

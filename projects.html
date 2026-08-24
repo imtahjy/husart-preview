@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>執行專案｜胡氏藝術</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="make.css">
+  <link rel="stylesheet" href="make-v84.css">
+  <link rel="stylesheet" href="page-transition.css">
+  <script src="page-transition.js"></script>
+</head>
+<body data-page="projects" class="projects-page">
+  <div data-shell-header></div>
+  <main class="projects-main">
+    <div class="project-filterbar" data-project-filterbar>
+      <span class="filter-label">執行專案</span>
+      <div class="filters" aria-label="專案分類">
+        <button class="active" type="button" data-filter="all">全部</button>
+        <button type="button" data-filter="public">公共藝術</button>
+        <button type="button" data-filter="curation">展覽策劃</button>
+        <button type="button" data-filter="cross">跨界合作</button>
+        <button type="button" data-filter="festival">藝術節</button>
+      </div>
+      <div class="project-dropdown" data-year-dropdown>
+        <button class="project-dropdown-trigger" type="button" data-year-trigger aria-expanded="false" aria-controls="project-year-menu">
+          <span>日期：<b data-year-summary>不限日期</b></span>
+          <span class="project-dropdown-arrow" aria-hidden="true"><img src="assets/ui/arrow-drop-down-solid.svg" alt=""></span>
+        </button>
+        <div class="project-dropdown-menu" id="project-year-menu" data-year-menu hidden></div>
+      </div>
+      <div class="project-dropdown" data-type-dropdown hidden>
+        <button class="project-dropdown-trigger" type="button" data-type-trigger aria-expanded="false" aria-controls="project-type-menu">
+          <span>類型：<b data-type-summary>不限類型</b></span>
+          <span class="project-dropdown-arrow" aria-hidden="true"><img src="assets/ui/arrow-drop-down-solid.svg" alt=""></span>
+        </button>
+        <div class="project-dropdown-menu project-type-menu" id="project-type-menu" data-type-menu hidden></div>
+      </div>
+    </div>
+    <div class="make-project-grid" id="project-grid"></div>
+  </main>
+  <div data-shell-footer></div>
+  <script src="make-shell.js"></script>
+  <script src="project-data.js"></script>
+  <script>
+    document.querySelector('#project-grid').innerHTML=PROJECTS.map(p=>`<a class="make-project-card" data-category="${p.category}" data-year="${p.year}" data-public-types="${(p.publicTypes||[]).join(',')}" href="project.html?id=${p.id}"><div class="make-project-image"><img src="${p.image}" alt="${p.title}"><div class="make-project-info"><strong>${p.title}</strong><span>${p.type}</span><span>${p.year}</span></div></div></a>`).join('');
+  </script>
+  <script src="projects-filter.js"></script>
+  <script src="make.js"></script>
+</body>
+</html>
