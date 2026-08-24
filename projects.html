@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="make.css">
   <link rel="stylesheet" href="make-v84.css">
+  <link rel="stylesheet" href="art-direction.css">
   <link rel="stylesheet" href="page-transition.css">
   <script src="page-transition.js"></script>
 </head>
@@ -42,7 +43,7 @@
     <div class="make-project-grid" id="project-grid"></div>
   </main>
   <div data-shell-footer></div>
-  <script src="make-shell.js"></script>
+  <script src="make-shell.js?v=4"></script>
   <script src="project-data.js"></script>
   <script>
     document.querySelector('#project-grid').innerHTML=PROJECTS.map(p=>`<a class="make-project-card" data-category="${p.category}" data-year="${p.year}" data-public-types="${(p.publicTypes||[]).join(',')}" href="project.html?id=${p.id}"><div class="make-project-image"><img src="${p.image}" alt="${p.title}"><div class="make-project-info"><strong>${p.title}</strong><span>${p.type}</span><span>${p.year}</span></div></div></a>`).join('');
