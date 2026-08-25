@@ -69,6 +69,65 @@
   .make-header .make-menu {
     margin-left: 0;
   }
+
+  /* Keep every mobile menu above page tabs and filters, while the header remains usable. */
+  .site-header,
+  .make-header,
+  .make-home-page .make-header,
+  .projects-page .make-header {
+    z-index:300;
+  }
+
+  .mobile-menu,
+  .make-drawer {
+    z-index:290;
+    inset:0;
+    padding:105px var(--pad,24px) 40px;
+    background:#76151d;
+    color:#fff;
+  }
+
+  .mobile-menu nav,
+  .make-drawer nav {
+    display:flex;
+    flex-direction:column;
+  }
+
+  .mobile-menu nav a,
+  .make-drawer nav a {
+    padding:9px 0;
+    border-bottom:1px solid rgba(255,255,255,.28);
+    color:#fff;
+    font-size:31px;
+    line-height:1.45;
+  }
+
+  body.menu-open .site-header,
+  body.menu-open .make-header,
+  body.about-v2.menu-open .site-header.over-hero,
+  body.make-home-page.menu-open .make-header,
+  body.make-home-page.menu-open.project-preview-active .make-header,
+  body.make-home-page.menu-open.home-loading .make-header {
+    transform:none!important;
+    background:#fff;
+    color:#111;
+    border-color:transparent;
+    backdrop-filter:none;
+    text-shadow:none;
+  }
+
+  body.menu-open .site-header .brand-mark,
+  body.menu-open .make-header .make-logo,
+  body.about-v2.menu-open .site-header.over-hero .brand-mark,
+  body.make-home-page.menu-open .make-header .make-logo {
+    filter:none;
+  }
+
+  body.menu-open .site-header .menu-toggle span,
+  body.menu-open .make-header .make-menu:before,
+  body.menu-open .make-header .make-menu:after {
+    background:#111;
+  }
 }
 
 /* Projects and artists use a clean white navigation surface. */

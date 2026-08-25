@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="make.css">
-  <link rel="stylesheet" href="nav-unified.css?v=7">
+  <link rel="stylesheet" href="nav-unified.css?v=11">
   <link rel="stylesheet" href="project-detail.css?v=8">
+  <link rel="stylesheet" href="artist-panel-unified.css?v=10">
   <link rel="stylesheet" href="art-direction.css">
   <link rel="stylesheet" href="page-transition.css">
   <script src="page-transition.js"></script>
@@ -95,11 +96,32 @@
 
   <div class="lightbox" data-lightbox aria-hidden="true"><button type="button" data-lightbox-close aria-label="關閉圖片">×</button><img src="" alt=""></div>
   <div class="artist-overlay" data-artist-overlay></div>
-  <aside class="artist-drawer" data-artist-drawer aria-hidden="true"><button class="drawer-close" data-drawer-close aria-label="關閉">×</button><p>COLLABORATING ARTIST</p><h2 data-drawer-name>廖昭豪</h2><span>TAIWAN</span><div class="drawer-art"></div><p class="drawer-copy">藝術家的創作關注空間、材料與人之間的關係，透過持續的田野觀察，讓被忽略的環境痕跡重新被看見。</p></aside>
+  <aside class="artist-drawer artist-detail-panel" data-artist-drawer aria-hidden="true" aria-label="藝術家資訊">
+    <div class="artist-detail-inner">
+      <button class="drawer-close artist-detail-close" data-drawer-close type="button" aria-label="關閉">
+        <img src="assets/ui/artist-close.svg" alt="" aria-hidden="true"><span>CLOSE</span>
+      </button>
+      <div class="artist-detail-header">
+        <div class="artist-detail-copy">
+          <h2 data-drawer-name>廖昭豪 Liao Chao-Hao</h2>
+          <p data-drawer-bio>台灣\n空間裝置</p>
+        </div>
+        <img class="artist-detail-portrait" data-drawer-portrait src="assets/artists/sah-cynthia.png" alt="藝術家肖像">
+      </div>
+      <section class="artist-detail-projects">
+        <h3>合作專案</h3>
+        <div class="artist-detail-project-list">
+          <a class="artist-detail-project-row" href="project.html?id=1"><span>2025 潛行</span><img src="assets/ui/artist-arrow.svg" alt="" aria-hidden="true"></a>
+          <a class="artist-detail-project-row" href="project.html?id=7"><span>2024 臺南新藝獎特別企劃</span><img src="assets/ui/artist-arrow.svg" alt="" aria-hidden="true"></a>
+          <a class="artist-detail-project-row" href="project.html?id=5"><span>2023 花蓮國際石雕藝術季</span><img src="assets/ui/artist-arrow.svg" alt="" aria-hidden="true"></a>
+        </div>
+      </section>
+    </div>
+  </aside>
 
-  <script src="make-shell.js?v=7"></script>
+  <script src="make-shell.js?v=11"></script>
   <script src="make.js"></script>
   <script src="project-data.js"></script>
-  <script src="detail.js?v=9"></script>
+  <script src="detail.js?v=10"></script>
 </body>
 </html>

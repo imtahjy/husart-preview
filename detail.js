@@ -1,6 +1,13 @@
 const artistDrawer=document.querySelector('[data-artist-drawer]');
 const overlay=document.querySelector('[data-artist-overlay]');
 const drawerName=document.querySelector('[data-drawer-name]');
+const drawerBio=document.querySelector('[data-drawer-bio]');
+const drawerPortrait=document.querySelector('[data-drawer-portrait]');
+const artistDetails={
+  '廖昭豪':{display:'廖昭豪 Liao Chao-Hao',bio:'台灣\n空間裝置',portrait:'assets/projects/project-01.png'},
+  '周代焌':{display:'周代焌 Chou Tai-Chun',bio:'台灣\n複合媒材、裝置',portrait:'assets/projects/project-09.png'},
+  '尹子潔':{display:'尹子潔 Yin Tzu-Chieh',bio:'台灣\n裝置、複合媒材',portrait:'assets/projects/project-10.png'}
+};
 const projectId=new URLSearchParams(location.search).get('id')||'1';
 const projectData=typeof PROJECTS==='undefined'?null:PROJECTS.find(project=>project.id===projectId);
 if(projectData){
@@ -17,7 +24,12 @@ if(projectData){
   if(firstRecord){firstRecord.src=projectData.image;firstRecord.alt=`${projectData.title}專案圖片`}
 }
 function setDrawer(open,name=''){
-  if(name)drawerName.textContent=name;
+  if(name){
+    const detail=artistDetails[name]||{display:name,bio:'台灣\n當代藝術',portrait:'assets/artists/sah-cynthia.png'};
+    drawerName.textContent=detail.display;
+    if(drawerBio)drawerBio.textContent=detail.bio;
+    if(drawerPortrait){drawerPortrait.src=detail.portrait;drawerPortrait.alt=detail.display;}
+  }
   artistDrawer.classList.toggle('open',open);
   overlay.classList.toggle('open',open);
   artistDrawer.setAttribute('aria-hidden',String(!open));

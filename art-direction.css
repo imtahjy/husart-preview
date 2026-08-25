@@ -1,0 +1,166 @@
+:root{
+  --wine:#6b141a;
+  --paper:#f0ece6;
+  --ink:#111;
+  --soft-ink:#656565;
+  --hairline:rgba(17,17,17,.18);
+  --edition-pad:clamp(24px,4.6vw,70px);
+}
+
+/* A single editorial system shared by every page. */
+body{background:var(--paper);color:var(--ink);font-weight:400}
+::selection{background:var(--wine);color:#fff}
+a,button{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offset:5px}
+
+.site-header,.make-header{
+  height:88px;
+  padding-inline:var(--edition-pad);
+  border-bottom:1px solid rgba(17,17,17,.12);
+}
+.desktop-nav,.make-nav{gap:clamp(22px,2.5vw,38px)}
+.desktop-nav a,.make-nav a{color:#686868;letter-spacing:.12em}
+.desktop-nav a.active,.make-nav a.active{color:var(--ink)}
+.header-lang,.lang{color:#686868}
+
+/* The numbered rail is the recurring Hu's Art signature. */
+.scene-label,.eyebrow{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.scene-label:before,.eyebrow:before{
+  content:"";
+  width:7px;
+  height:7px;
+  flex:0 0 7px;
+  border-radius:50%;
+  background:currentColor;
+  box-shadow:0 0 0 5px rgba(107,20,26,.10);
+}
+.scene-label:after,.eyebrow:after{
+  content:"";
+  width:clamp(32px,5vw,76px);
+  height:1px;
+  order:2;
+  background:currentColor;
+  opacity:.28;
+}
+.scene-label span,.eyebrow span{width:auto;min-width:25px}
+
+/* Home: the project index remains the primary first impression. */
+.home-project-index>a:not(.view-projects){
+  border-bottom:1px solid rgba(255,255,255,.14);
+  padding:9px 0;
+}
+.home-project-index h2{letter-spacing:.025em}
+.home-project-index.has-hover>a:not(.view-projects){opacity:.28}
+.home-project-background span{background:linear-gradient(90deg,rgba(20,4,6,.78),rgba(20,4,6,.24) 58%,rgba(20,4,6,.58))}
+
+/* About: shorter manifesto, then proof through selected work. */
+.value-story{height:175vh}
+.value-copy{max-width:1080px}
+.value-copy h1{font-size:clamp(27px,2.45vw,36px);line-height:2.05}
+.value-copy p{font-size:clamp(23px,2.45vw,36px);line-height:2.05}
+.section-heading h2,.proof-heading h2,.journey-heading h2,.partners-heading h2{
+  font-size:clamp(38px,4.8vw,68px);
+}
+.selected-work{
+  padding:clamp(90px,10vw,150px) var(--edition-pad);
+  background:var(--paper);
+}
+.selected-work-head{
+  display:grid;
+  grid-template-columns:.6fr 1.4fr;
+  gap:50px;
+  margin-bottom:70px;
+}
+.selected-work-head h2{
+  max-width:760px;
+  margin:0;
+  font-size:clamp(38px,4.8vw,68px);
+  font-weight:500;
+  line-height:1.08;
+  letter-spacing:-.05em;
+}
+.selected-work-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:clamp(18px,2.5vw,38px);
+  align-items:start;
+}
+.selected-work-card{margin:0}
+.selected-work-card:nth-child(3){grid-column:2;margin-top:clamp(-100px,-6vw,-45px)}
+.selected-work-card:first-child{grid-row:span 2}
+.selected-work-card img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  filter:saturate(.88) contrast(1.02);
+}
+.selected-work-card:first-child img{aspect-ratio:4/5}
+.selected-work-card figcaption{
+  display:grid;
+  grid-template-columns:34px 1fr auto;
+  gap:12px;
+  padding-top:13px;
+  border-top:1px solid var(--hairline);
+  margin-top:12px;
+  font-size:14px;
+}
+.selected-work-card figcaption span:first-child,
+.selected-work-card figcaption time{
+  color:var(--soft-ink);
+  font:500 10px/1.6 Inter,sans-serif;
+  letter-spacing:.08em;
+}
+
+/* Publications: an editorial rhythm instead of a uniform commerce grid. */
+.publications-grid{gap:1px;background:#d9d9d9}
+.publication-card{background:#fff}
+.publication-card:nth-child(6n+1){grid-column:span 2}
+.publication-card:nth-child(6n+1) .publication-image{aspect-ratio:3/1.48}
+.publication-card h2{height:auto;min-height:104px;padding:14px 18px 30px;border-top:1px solid rgba(17,17,17,.08)}
+
+/* Restore a consistent closing cadence on index pages. */
+.projects-page .make-footer,
+body[data-page="artists"]>.make-footer,
+.publications-page .make-footer{display:grid}
+.make-footer,
+.project-footer,
+.publication-footer,
+body>footer:not(.project-footer):not(.publication-footer){background:var(--wine);color:#fff}
+.make-footer p,.make-footer a{color:rgba(255,255,255,.72)}
+body>footer:not(.project-footer):not(.publication-footer) .brand em{color:#fff}
+body>footer:not(.project-footer):not(.publication-footer) a,
+body>footer:not(.project-footer):not(.publication-footer) small{color:rgba(255,255,255,.72)}
+
+.reveal{transition-duration:.58s}
+.page-transition-curtain{--page-veil-cover:.22s;--page-veil-fade:.24s}
+
+@media(max-width:900px){
+  .site-header,.make-header{height:72px}
+  .selected-work-head{grid-template-columns:1fr;gap:28px}
+  .selected-work-grid{grid-template-columns:1fr 1fr}
+  .selected-work-card:first-child{grid-row:auto;grid-column:1/-1}
+  .selected-work-card:first-child img{aspect-ratio:16/10}
+  .selected-work-card:nth-child(3){grid-column:auto;margin-top:0}
+  .projects-main{padding-top:150px}
+}
+
+@media(max-width:600px){
+  .value-story{height:155vh}
+  .selected-work-grid{grid-template-columns:1fr}
+  .selected-work-card:first-child{grid-column:auto}
+  .selected-work-card:first-child img,.selected-work-card img{aspect-ratio:4/3}
+  .make-project-grid{gap:18px;padding-inline:20px}
+  .make-project-info{padding:48px 14px 13px}
+  .publication-card:nth-child(6n+1){grid-column:auto}
+  .publication-card:nth-child(6n+1) .publication-image{aspect-ratio:3/2}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .make-project-image img{transition:none}
+}
