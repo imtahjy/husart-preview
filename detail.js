@@ -1,6 +1,6 @@
-const drawer=document.querySelector('[data-artist-drawer]');
+const artistDrawer=document.querySelector('[data-artist-drawer]');
 const overlay=document.querySelector('[data-artist-overlay]');
-const drawerContent=document.querySelector('[data-artist-drawer-content]');
+const drawerName=document.querySelector('[data-drawer-name]');
 const projectId=new URLSearchParams(location.search).get('id')||'1';
 const projectData=typeof PROJECTS==='undefined'?null:PROJECTS.find(project=>project.id===projectId);
 if(projectData){
@@ -16,25 +16,15 @@ if(projectData){
   const firstRecord=document.querySelector('.record-grid img');
   if(firstRecord){firstRecord.src=projectData.image;firstRecord.alt=`${projectData.title}專案圖片`}
 }
-function artistProjects(artist){
-  if(!artist.projects?.length)return '';
-  return `<section class="detail-drawer-projects"><h3>合作專案</h3><div class="detail-drawer-project-list">${artist.projects.map(project=>`<a href="project.html?id=${encodeURIComponent(project.id||'1')}"><span>${project.label}</span><span aria-hidden="true">→</span></a>`).join('')}</div></section>`;
-}
-function renderArtist(id){
-  const artist=typeof ARTISTS==='undefined'?null:ARTISTS.find(item=>item.id===id);
-  const fallback={display:id,bio:'藝術家資訊整理中',portrait:'',projects:[]};
-  const data=artist||fallback;
-  drawerContent.innerHTML=`<button class="drawer-close" data-drawer-close type="button" aria-label="關閉"><svg viewBox="0 0 20 20" fill="none"><path d="M15 5 5 15M5 5l10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>CLOSE</span></button><div class="detail-drawer-bio"><div><h2>${data.display}</h2><p>${data.bio}</p></div>${data.portrait?`<img src="${data.portrait}" alt="${data.display}">`:''}</div>${artistProjects(data)}`;
-  drawerContent.querySelector('[data-drawer-close]').addEventListener('click',()=>setDrawer(false));
-}
-function setDrawer(open,id=''){
-  if(open&&id)renderArtist(id);
-  drawer.classList.toggle('open',open);
+function setDrawer(open,name=''){
+  if(name)drawerName.textContent=name;
+  artistDrawer.classList.toggle('open',open);
   overlay.classList.toggle('open',open);
-  drawer.setAttribute('aria-hidden',String(!open));
+  artistDrawer.setAttribute('aria-hidden',String(!open));
   document.body.classList.toggle('drawer-open',open);
 }
 document.querySelectorAll('[data-artist]').forEach(button=>button.addEventListener('click',()=>setDrawer(true,button.dataset.artist)));
+document.querySelector('[data-drawer-close]').addEventListener('click',()=>setDrawer(false));
 overlay.addEventListener('click',()=>setDrawer(false));
 
 const lightbox=document.querySelector('[data-lightbox]');
@@ -49,6 +39,6 @@ document.querySelector('[data-lightbox-close]').addEventListener('click',closeLi
 lightbox.addEventListener('click',event=>{if(event.target===lightbox)closeLightbox()});
 addEventListener('keydown',event=>{
   if(event.key!=='Escape')return;
-  if(drawer.classList.contains('open')){setDrawer(false);return}
+  if(artistDrawer.classList.contains('open')){setDrawer(false);return}
   if(lightbox.classList.contains('open'))closeLightbox();
 });
